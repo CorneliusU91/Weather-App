@@ -4,18 +4,13 @@ import SecondPage from './Components/SecondPage/SecondPage'
 import HomeScreen from "./components/HomeScreen"
 
 const App = () => {
-
-const App = () => {
   return (
     <div>
-      {/* <WeatherScreen /> */}
-      <SecondPage/>
-
-
-    <div className="bg-black w-screen h-screen">
-      <div>
+      <div className="bg-black w-screen h-screen">
         <HomeScreen />
       </div>
+      {/* <WeatherScreen /> */}
+      <SecondPage/>
     </div>
   )
 }
