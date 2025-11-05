@@ -1,17 +1,21 @@
 import React from "react";
 import { ChevronLeft, Circle } from "lucide-react";
 import WeatherInfo from "./WeatherInfo";
+import BackToHome from "./BackToHome";
 
-const weatherScreen = () => {
+const weatherScreen = ({ onBackClick }) => {
   return (
     <div className="w-screen h-screen bg-black text-white">
       <div className="relative flex items-start h-16 w-full">
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 mt-2">
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 mt-2 cursor-pointer" onClick={onBackClick}>
           <ChevronLeft size={28} />
         </div>
         <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xxl w-max text-white">
           Air Conditions
         </p>
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 mt-2">
+          <BackToHome />
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center">
         <div>

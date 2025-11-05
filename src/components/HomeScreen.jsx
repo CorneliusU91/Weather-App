@@ -1,9 +1,9 @@
 import React from "react";
 import { ArrowRight, Umbrella } from "lucide-react";
 
-const HomeScreen = () => {
+const HomeScreen = ({ onArrowClick }) => {
   return (
-    <div className="items-center justify-center flex flex-col text-center">
+    <div className="bg-black w-screen h-screen items-center justify-center flex flex-col text-center">
       <div className="mt[40px]">
         <Umbrella className="text-blue-400 w-[136px] h-[136px] mt-[150px]" />
       </div>
@@ -13,7 +13,7 @@ const HomeScreen = () => {
         <p className="text-white text-2xl">Weather App</p>
       </div>
 
-      <div>
+      <div onClick={onArrowClick} className="cursor-pointer">
         <ArrowRight className="bg-blue-500 text-amber-50 w-[25px] h-[25px] mt-[85px] rounded-3xl" />
       </div>
     </div>

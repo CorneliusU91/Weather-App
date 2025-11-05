@@ -1,23 +1,16 @@
-import React from "react";
-import { Search } from "lucide-react";
 
-const SearchBar = ({ variant = "md" }) => {
-  const position = variant === "md" ? "absolute top-90 left-1/2 -translate-x-1/2" : "absolute top-70 left-1/2 -translate-x-1/2";
-  
+
+const SearchBar = ({ onEnterClick }) => {
   return (
-    <div>
-      <div>
-        <div className= "flex justify-between m-3 pt-3">
-          <input
-            name="searchbar"
-            className="w-[270px] h-45px pl-5 shadow-lg rounded-xl bg-cyan-900"
-            placeholder="Search city"
-            type="text"
-          />
-          <div>
-            <h2 className="text-white font-bold">Cancel</h2>
-          </div>
-        </div>
+    <div className="flex flex-col items-center gap-3">
+      <input
+        name="searchbar"
+        className="w-[270px] md:w-[400px] h-12 pl-5 mt-5 shadow-lg rounded-xl bg-cyan-900 text-white placeholder-gray-300"
+        placeholder="Search city"
+        type="text"
+      />
+      <div onClick={onEnterClick} className="cursor-pointer">
+        <h2 className="text-white font-bold text-xl">Enter</h2>
       </div>
     </div>
   );
