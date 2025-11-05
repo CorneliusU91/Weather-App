@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
-import WeatherScreen from './Components/WeatherScreen'
-import SecondPage from './Components/SecondPage/SecondPage'
-import HomeScreen from "./Components/HomeScreen"
+import WeatherScreen from './components/WeatherScreen'
+import SecondPage from './components/SecondPage/SecondPage'
+import HomeScreen from "./components/HomeScreen"
 
 const HomeScreenWithNav = () => {
   const navigate = useNavigate()
