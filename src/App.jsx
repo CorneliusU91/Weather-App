@@ -1,17 +1,48 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import WeatherScreen from './Components/WeatherScreen'
 import SecondPage from './Components/SecondPage/SecondPage'
-import HomeScreen from "./components/HomeScreen"
+import HomeScreen from "./Components/HomeScreen"
+
+const HomeScreenWithNav = () => {
+  const navigate = useNavigate()
+  
+  const handleArrowClick = () => {
+    navigate('/second-page')
+  }
+  
+  return <HomeScreen onArrowClick={handleArrowClick} />
+}
+
+const SecondPageWithNav = () => {
+  const navigate = useNavigate()
+  
+  const handleEnterClick = () => {
+    navigate('/weather')
+  }
+  
+  return <SecondPage onEnterClick={handleEnterClick} />
+}
+
+const WeatherScreenWithNav = () => {
+  const navigate = useNavigate()
+  
+  const handleBackClick = () => {
+    navigate('/second-page')
+  }
+  
+  return <WeatherScreen onBackClick={handleBackClick} />
+}
 
 const App = () => {
   return (
-    <div>
-      <div className="bg-black w-screen h-screen">
-        <HomeScreen />
-      </div>
-      {/* <WeatherScreen /> */}
-      <SecondPage/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeScreenWithNav />} />
+        <Route path="/second-page" element={<SecondPageWithNav />} />
+        <Route path="/weather" element={<WeatherScreenWithNav />} />
+      </Routes>
+    </Router>
   )
 }
 
